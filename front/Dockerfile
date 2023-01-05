@@ -8,6 +8,7 @@ RUN apt-get upgrade -y && \
 RUN npm install -g npm@latest
 COPY . .
 RUN npm install -g @angular/cli@10.1.7
+RUN ng version
 RUN npm install
 RUN ng build
 
