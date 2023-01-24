@@ -14,4 +14,3 @@ RUN ng build
 
 FROM nginx:latest
 COPY --from=builder /app/dist/tlcfront/ /usr/share/nginx/html
-EXPOSE 4200
