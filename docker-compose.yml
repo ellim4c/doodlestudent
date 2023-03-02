@@ -37,7 +37,7 @@ services:
     build: ./api
 
   etherpad:
-    image: etherpad
+    image: etherpad/etherpad
 
 
   front:
