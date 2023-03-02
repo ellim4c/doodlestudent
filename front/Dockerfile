@@ -1,6 +1,6 @@
 FROM ubuntu:16.04 AS builder
 WORKDIR /app
-RUN apt-get update
+RUN apt-get update -y
 RUN apt-get install -y npm curl
 RUN apt-get upgrade -y && \
     curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
