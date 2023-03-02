@@ -31,8 +31,14 @@ services:
         condition: service_healthy
     environment:
       QUARKUS_DATASOURCE_JDBC_URL: jdbc:mysql://mysql-docker:3306/tlc?useUnicode=true&serverTimezone=Europe/Paris
+      DOODLE_INTERNALPADURL: "http://etherpad:9001"
+      DOODLE_EXTERNALPADURL: "http://etherpad:9001"
     image: api
     build: ./api
+
+  etherpad:
+    image: etherpad
+
 
   front:
     image: front
