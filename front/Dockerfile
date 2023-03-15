@@ -10,7 +10,7 @@ COPY . .
 RUN npm install -g @angular/cli@10.1.7
 RUN ng version
 RUN npm install
-RUN ng build
+RUN ng build --prod
 
 FROM nginx:latest
 COPY --from=builder /app/dist/tlcfront/ /usr/share/nginx/html
