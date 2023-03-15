@@ -1,4 +1,4 @@
-version: '3.0'
+version: "3.0"
 
 services:
   nginx:
@@ -21,9 +21,9 @@ services:
     ports:
       - 3306:3306
     healthcheck:
-            test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-            timeout: 20s
-            retries: 10
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
 
   api:
     depends_on:
@@ -38,7 +38,8 @@ services:
 
   etherpad:
     image: etherpad/etherpad
-
+    volumes:
+      - "./APIKEY.txt:/opt/etherpad-lite/APIKEY.txt"
 
   front:
     image: front
