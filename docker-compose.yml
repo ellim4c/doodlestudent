@@ -33,6 +33,7 @@ services:
       QUARKUS_DATASOURCE_JDBC_URL: jdbc:mysql://mysql-docker:3306/tlc?useUnicode=true&serverTimezone=Europe/Paris
       DOODLE_INTERNALPADURL: "http://etherpad:9001"
       DOODLE_EXTERNALPADURL: "http://etherpad:9001"
+      QUARKUS_FLYWAY_MIGRATE_AT_START: true
     image: api
     build: ./api
 
