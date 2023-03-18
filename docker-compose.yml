@@ -61,3 +61,15 @@ services:
     build: ./front
     volumes:
       - ./nginx.front.conf:/etc/nginx/conf.d/default.conf:ro
+
+  mail:
+    image: bytemark/smtp
+    restart: always
+    ports:
+      - "2525:25"
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: myadmin
+    environment:
+      - PMA_HOST=mysql-docker
