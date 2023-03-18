@@ -49,6 +49,7 @@ services:
       DOODLE_EXTERNALPADURL: http://projettlchf.istic.univ-rennes1.fr/etherpad/
       QUARKUS_FLYWAY_MIGRATE_AT_START: true
       QUARKUS_MAILER_HOST: mailer
+      QUARKUS_MAILER_PORT: 25
     image: api
     build: ./api
 
@@ -66,8 +67,6 @@ services:
   mailer:
     image: bytemark/smtp
     restart: always
-    ports:
-      - "2525:25"
 
   myadmin:
     image: phpmyadmin
