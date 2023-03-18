@@ -68,8 +68,9 @@ services:
     ports:
       - "2525:25"
 
-  phpmyadmin:
+  myadmin:
     image: phpmyadmin
     container_name: myadmin
     environment:
       - PMA_HOST=mysql-docker
+      - PMA_ABSOLUTE_URI=http://projettlchf.istic.univ-rennes1.fr/phpmyadmin/
