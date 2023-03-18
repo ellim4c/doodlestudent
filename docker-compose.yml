@@ -48,6 +48,7 @@ services:
       DOODLE_INTERNALPADURL: http://etherpad:9001/
       DOODLE_EXTERNALPADURL: http://projettlchf.istic.univ-rennes1.fr/etherpad/
       QUARKUS_FLYWAY_MIGRATE_AT_START: true
+      QUARKUS_MAILER_HOST: mailer
     image: api
     build: ./api
 
@@ -62,7 +63,7 @@ services:
     volumes:
       - ./nginx.front.conf:/etc/nginx/conf.d/default.conf:ro
 
-  mail:
+  mailer:
     image: bytemark/smtp
     restart: always
     ports:
