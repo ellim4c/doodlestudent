@@ -1,0 +1,12 @@
+services:
+  nginx:
+    volumes:
+      - ./nginx.local.conf:/etc/nginx/nginx.conf:ro
+
+  api:
+    environment:
+      DOODLE_EXTERNALPADURL: http://localhost/etherpad/
+
+  myadmin:
+    environment:
+      - PMA_ABSOLUTE_URI=http://localhost/phpmyadmin/
